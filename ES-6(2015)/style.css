@@ -1,0 +1,63 @@
+.header {
+    background-color: #4CAED4;
+}
+
+.content {
+    background-color: #BDD8E8;
+    height: 100vh;
+    width: 100%
+}
+
+.header h1 {
+    color: white;
+}
+
+.header p {
+    color: #2C8098;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.collapseHeader {
+    border: 2px solid #D1B4CD;
+    background-color: #FCFCFC;
+    color: #D1B4CD;
+    border-radius: 10px;
+}
+
+
+.collapseHeader:hover {
+    background-color: #EDEFF1;
+}
+
+h6 {
+    color: #2C8098;
+}
+
+.es6 {
+    border:1px solid #6FC000;
+    border-left: 10px solid #6FC000;
+}
+
+.es5 {
+    border:1px solid #EE0017;
+    border-left: 10px solid #EE0017;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-dark-blue {
+    color:  #2C8098;
+}
+
+.notice {
+    color: #2C8098;
+    font-weight: bolder;
+}
+
+.explanation {
+    background-color: transparent;
+    color: #2C8098;
+}
