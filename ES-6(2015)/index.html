@@ -464,6 +464,145 @@
                 </div>
             </div>
         </div>
+        <!--================================================================================-->
+        <div class="heading11 px-5" style="background-color: #BDD8E8">
+            <p class="color-dark-blue font-weight-bold"> 6) Literals </p>
+            <h3 data-toggle="collapse" data-target="#collapse11" aria-expanded="false"
+                aria-controls="collapse11"
+                class="text-center py-1 collapseHeader"> Binary And Octal Literal </h3>
+
+            <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+    0b111110111 === 503
+    0o767 === 503
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+   parseInt("111110111", 2) === 503;
+    parseInt("767", 8) === 503;
+    0767 === 503; // only in non-strict mode
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================================================================================-->
+        <div class="heading12 px-5" style="background-color: #BDD8E8">
+            <p class="color-dark-blue font-weight-bold"> 7) Enhanced Object Properties </p>
+            <h3 data-toggle="collapse" data-target="#collapse12" aria-expanded="false"
+                aria-controls="collapse12"
+                class="text-center py-1 collapseHeader"> 1) Property Shorthand  2) Computed Property Names 3) Method Properties </h3>
+
+            <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+  1) var x = 0, y = 0
+     obj = { x, y }
+
+  2) let obj = {
+         foo: "bar",
+         [ "baz" + quux() ]: 42
+     }
+
+  3) obj = {
+     foo (a, b) {
+        …
+     },
+     bar (x, y) {
+        …
+     },
+     *quux (x, y) {
+        …
+     }
+    }
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+  1) var x = 0, y = 0;
+         obj = { x: x, y: y };
+
+  2) var obj = {
+    foo: "bar"
+    };
+    obj[ "baz" + quux() ] = 42;
+
+  3) obj = {
+    foo: function (a, b) {
+        …
+    },
+    bar: function (x, y) {
+        …
+    },
+    //  quux: no equivalent in ES5
+    …
+    };
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================================================================================-->
+        <div class="heading13 px-5" style="background-color: #BDD8E8">
+            <p class="color-dark-blue font-weight-bold"> 8) Destructuring Assignment </p>
+            <h3 data-toggle="collapse" data-target="#collapse13" aria-expanded="false"
+                aria-controls="collapse13"
+                class="text-center py-1 collapseHeader"> Array Matching </h3>
+
+            <div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+    var list = [ 1, 2, 3 ]
+    var [ a, , b ] = list
+    [ b, a ] = [ a, b ]
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+    var list = [ 1, 2, 3 ];
+    var a = list[0], b = list[2];
+    var tmp = a; a = b; b = tmp;
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
