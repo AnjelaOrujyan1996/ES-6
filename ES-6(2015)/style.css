@@ -1,5 +1,6 @@
 .header {
-    background-color: #4CAED4;
+    background-color: #007DB7;
+    max-height: 10vh;
 }
 
 .content {
@@ -13,15 +14,15 @@
 }
 
 .header p {
-    color: #2C8098;
+    color: white;
     letter-spacing: 1px;
     text-transform: capitalize;
 }
 
 .collapseHeader {
-    border: 2px solid #D1B4CD;
+    border: 2px solid #007DB7;
     background-color: #FCFCFC;
-    color: #D1B4CD;
+    color: #007DB7;
     border-radius: 10px;
 }
 
@@ -31,7 +32,7 @@
 }
 
 h6 {
-    color: #2C8098;
+    color: #184B46;
 }
 
 .es6 {
@@ -49,15 +50,35 @@ h6 {
 }
 
 .color-dark-blue {
-    color:  #2C8098;
+    color:  #007DB7;
 }
 
 .notice {
-    color: #2C8098;
+    color:#007DB7;
     font-weight: bolder;
 }
 
 .explanation {
     background-color: transparent;
-    color: #2C8098;
+    color: #007DB7;
 }
+
+#accordion {
+    overflow-y: scroll;
+    max-height: 90vh;
+}
+
+#accordion::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    background-color: #007DB7;
+    border-radius: 10px;
+}
+
+#accordion::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #007DB7;
+}
+
+

@@ -14,12 +14,12 @@
         <p class="p-2 m-0">New Features: Overview & Comparison</p>
     </div>
     <div id="accordion" class="content pt-3">
-         <!--================================================================================-->
+        <!--================================================================================-->
         <div class="headingOne px-5" style="background-color: #BDD8E8">
-                <p class="color-dark-blue font-weight-bold"> 1) Constants </p>
-                <h3 data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
-                    aria-controls="collapseOne"
-                    class="text-center py-1 collapseHeader"> Constants </h3>
+            <p class="color-dark-blue font-weight-bold"> 1) Constants </p>
+            <h3 data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                aria-controls="collapseOne"
+                class="text-center py-1 collapseHeader"> Constants </h3>
 
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="row card-body">
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-         <!--================================================================================-->
+        <!--================================================================================-->
         <div class="heading2 px-5" style="background-color: #BDD8E8">
             <p class="color-dark-blue font-weight-bold"> 2) Scoping </p>
             <h3 data-toggle="collapse" data-target="#collapse2" aria-expanded="false"
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-         <!--================================================================================-->
+        <!--================================================================================-->
         <div class="heading3 px-5" style="background-color: #BDD8E8">
             <h3 data-toggle="collapse" data-target="#collapse3" aria-expanded="false"
                 aria-controls="collapse3"
@@ -176,9 +176,9 @@
                 </div>
             </div>
         </div>
-         <!--================================================================================-->
+        <!--================================================================================-->
         <div class="heading4 px-5" style="background-color: #BDD8E8">
-            <p class="color-dark-blue font-weight-bold"> 3) Arrow Functions  </p>
+            <p class="color-dark-blue font-weight-bold"> 3) Arrow Functions </p>
             <h3 data-toggle="collapse" data-target="#collapse4" aria-expanded="false"
                 aria-controls="collapse4"
                 class="text-center py-1 collapseHeader"> Expression bodies </h3>
@@ -301,7 +301,7 @@
         </div>
         <!--================================================================================-->
         <div class="heading7 px-5" style="background-color: #BDD8E8">
-            <p class="color-dark-blue font-weight-bold"> 4) Extended parameter handling  </p>
+            <p class="color-dark-blue font-weight-bold"> 4) Extended parameter handling </p>
             <h3 data-toggle="collapse" data-target="#collapse7" aria-expanded="false"
                 aria-controls="collapse7"
                 class="text-center py-1 collapseHeader"> Default parameter values</h3>
@@ -504,7 +504,8 @@
             <p class="color-dark-blue font-weight-bold"> 7) Enhanced Object Properties </p>
             <h3 data-toggle="collapse" data-target="#collapse12" aria-expanded="false"
                 aria-controls="collapse12"
-                class="text-center py-1 collapseHeader"> 1) Property Shorthand  2) Computed Property Names 3) Method Properties </h3>
+                class="text-center py-1 collapseHeader"> 1) Property Shorthand 2) Computed Property Names 3) Method
+                Properties </h3>
 
             <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
                 <div class="row card-body">
@@ -582,7 +583,11 @@
                                 <pre>
     var list = [ 1, 2, 3 ]
     var [ a, , b ] = list
-    [ b, a ] = [ a, b ]
+    [ b, a ] = [ a, b ]    // swap
+
+    let [var1 = default, var2, ...rest] = array  // can give default value
+    ex. let [ a = 5, b, c ] = [, 3 , 4];
+        console.log('a=',a, ' b=', b , ' c=',c); // a= 5  b= 3  c= 4
  </pre>
                             </div>
                         </div>
@@ -595,6 +600,7 @@
     var list = [ 1, 2, 3 ];
     var a = list[0], b = list[2];
     var tmp = a; a = b; b = tmp;
+
 </pre>
                             </div>
                         </div>
@@ -602,7 +608,80 @@
                 </div>
             </div>
         </div>
+        <div class="heading14 px-5" style="background-color: #BDD8E8">
+            <h3 data-toggle="collapse" data-target="#collapse14" aria-expanded="false"
+                aria-controls="collapse14"
+                class="text-center py-1 collapseHeader"> Destructuring Assignment Of Object </h3>
 
+            <div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+     let options = {
+     title: "Меню",
+     width: 100,
+     height: 200
+    };
+
+    1) let {title, width, height} = options;
+
+    alert(title);  // Меню
+    alert(width);  // 100
+    alert(height); // 200
+
+    2) let {width: w, height: h, title} = options;
+
+    alert(title);  // Меню
+    alert(w);      // 100   alert(width) => error (width not found);
+    alert(h);      // 200
+
+    3) let {width=100, height=200, title} = options;  // default values
+
+    alert(title);  // Меню
+    alert(width);  // 100
+    alert(height); // 200
+
+    4) let {title, ...size} = options;
+
+     //title = "Меню"
+     //size = { width: 100, height: 200} (the rest)
+
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+    1) let options = {
+     title: "Меню",
+     width: 100,
+     height: 200
+    };
+
+    alert(options.title);  // Меню
+    alert(options.width);  // 100
+    alert(options.height); // 200
+
+    2) var obj = {a: 1, b: 2, c: 3};
+
+    var a = obj['a'],
+    b = obj.b,
+    c = obj.c;
+
+    console.log(obj, a, b, c); // {"a":1,"b":2,"c":3}, 1, 2, 3  // destructuring in es-5
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -620,3 +699,4 @@
 <script src="main.js"></script>
 </body>
 </html>
+

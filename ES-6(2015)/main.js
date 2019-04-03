@@ -21,3 +21,14 @@
 // console.log(op);
 // console.log(lhs);
 // console.log(rhs);
+
+// let options = {
+//     title: "Меню",
+//     width: 100,
+//     height: 200
+// };
+//
+// let {width: w, height: h, title} = options;
+
+
+
