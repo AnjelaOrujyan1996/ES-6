@@ -682,7 +682,354 @@
                 </div>
             </div>
         </div>
+        <!--================================================================================-->
+        <div class="heading17 px-5" style="background-color: #BDD8E8">
+            <p class="color-dark-blue font-weight-bold"> 10) Classes </p>
+            <h3 data-toggle="collapse" data-target="#collapse17" aria-expanded="false"
+                aria-controls="collapse17"
+                class="text-center py-1 collapseHeader"> Class Expression </h3>
 
+            <div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+   class User {
+
+    constructor(name) {
+      this.name = name;
+     }
+
+     sayHi() {
+      alert(this.name);
+     }
+  }
+
+    let user = new User("Bob");
+    user.sayHi(); // Bob
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+   function User(name) {
+          this.name = name;
+   }
+
+   User.prototype.sayHi = function() {
+         alert(this.name);
+   };
+
+   let user = new User("Bob");
+   user.sayHi(); // Bob
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="heading18 px-5" style="background-color: #BDD8E8">
+            <h3 data-toggle="collapse" data-target="#collapse18" aria-expanded="false"
+                aria-controls="collapse18"
+                class="text-center py-1 collapseHeader"> Getters & Setters </h3>
+
+            <div id="collapse18" class="collapse" aria-labelledby="heading18" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+    class User {
+        constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+     }
+
+    // геттер
+    get fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+
+    // сеттер
+    set fullName(newValue) {
+     [this.firstName, this.lastName] = newValue.split(' ');
+    }
+
+    let user = new User("Вася", "Пупков");
+    alert( user.fullName ); // Вася Пупков
+    user.fullName = "Иван Петров";
+    alert( user.fullName ); // Иван Петров
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+   function Foo(bar) {
+	this._bar = bar;
+    };
+    Foo.prototype = {
+	setBar : function (bar) {
+		this._bar = bar;
+	},
+	getBar : function () {
+		return this._bar;
+	}
+    };
+    var foo = new Foo;
+    foo.setBar(123);
+    alert(foo.getBar());
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="heading19 px-5" style="background-color: #BDD8E8">
+            <h3 data-toggle="collapse" data-target="#collapse19" aria-expanded="false"
+                aria-controls="collapse19"
+                class="text-center py-1 collapseHeader"> Static Members </h3>
+
+            <div id="collapse19" class="collapse" aria-labelledby="heading19" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+    class Rectangle extends Shape {
+     …
+      static defaultRectangle () {
+        return new Rectangle("default", 0, 0, 100, 100)
+    }
+    }
+    class Circle extends Shape {
+    …
+    static defaultCircle () {
+         return new Circle("default", 0, 0, 100)
+    }
+    }
+    var defRectangle = Rectangle.defaultRectangle()
+    var defCircle    = Circle.defaultCircle()
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+   var Rectangle = function (id, x, y, width, height) {
+     …
+    };
+    Rectangle.defaultRectangle = function () {
+        return new Rectangle("default", 0, 0, 100, 100);
+    };
+    var Circle = function (id, x, y, width, height) {
+    …
+    };
+    Circle.defaultCircle = function () {
+      return new Circle("default", 0, 0, 100);
+    };
+    var defRectangle = Rectangle.defaultRectangle();
+    var defCircle    = Circle.defaultCircle();
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="heading20 px-5" style="background-color: #BDD8E8">
+            <h3 data-toggle="collapse" data-target="#collapse20" aria-expanded="false"
+                aria-controls="collapse20"
+                class="text-center py-1 collapseHeader"> Inheritance </h3>
+
+            <div id="collapse20" class="collapse" aria-labelledby="heading20" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+    class Rectangle extends Shape {
+    constructor (id, x, y, width, height) {
+        super(id, x, y)
+        this.width  = width
+        this.height = height
+    }
+    }
+    class Circle extends Shape {
+    constructor (id, x, y, radius) {
+        super(id, x, y)
+        this.radius = radius
+    }
+    }
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+  var Rectangle = function (id, x, y, width, height) {
+    Shape.call(this, id, x, y);
+    this.width  = width;
+    this.height = height;
+    };
+    Rectangle.prototype = Object.create(Shape.prototype);
+    Rectangle.prototype.constructor = Rectangle;
+    var Circle = function (id, x, y, radius) {
+    Shape.call(this, id, x, y);
+    this.radius = radius;
+    };
+    Circle.prototype = Object.create(Shape.prototype);
+    Circle.prototype.constructor = Circle;
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="heading21 px-5" style="background-color: #BDD8E8">
+            <h3 data-toggle="collapse" data-target="#collapse21" aria-expanded="false"
+                aria-controls="collapse21"
+                class="text-center py-1 collapseHeader"> Base class access </h3>
+
+            <div id="collapse21" class="collapse" aria-labelledby="heading21" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+   class Shape {
+    …
+    toString () {
+        return `Shape(${this.id})`
+    }
+    }
+    class Rectangle extends Shape {
+    constructor (id, x, y, width, height) {
+        super(id, x, y)
+        …
+    }
+    toString () {
+        return "Rectangle > " + super.toString()
+    }
+    }
+    class Circle extends Shape {
+    constructor (id, x, y, radius) {
+        super(id, x, y)
+        …
+    }
+    toString () {
+        return "Circle > " + super.toString()
+    }
+    }
+
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+  var Shape = function (id, x, y) {
+    …
+    };
+    Shape.prototype.toString = function (x, y) {
+    return "Shape(" + this.id + ")"
+    };
+    var Rectangle = function (id, x, y, width, height) {
+    Shape.call(this, id, x, y);
+    …
+    };
+    Rectangle.prototype.toString = function () {
+    return "Rectangle > " + Shape.prototype.toString.call(this);
+    };
+    var Circle = function (id, x, y, radius) {
+    Shape.call(this, id, x, y);
+    …
+    };
+    Circle.prototype.toString = function () {
+    return "Circle > " + Shape.prototype.toString.call(this);
+    };
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================================================================================-->
+        <div class="heading22 px-5" style="background-color: #BDD8E8">
+            <p class="color-dark-blue font-weight-bold"> 10) Promise </p>
+            <h3 data-toggle="collapse" data-target="#collapse22" aria-expanded="false"
+                aria-controls="collapse22"
+                class="text-center py-1 collapseHeader"> Promise </h3>
+
+            <div id="collapse22" class="collapse" aria-labelledby="heading22" data-parent="#accordion">
+                <div class="row card-body">
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es6">
+                                <h6> ECMAScript-6</h6>
+                                <pre>
+    function msgAfterTimeout (msg, who, timeout) {
+        return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(`${msg} Hello ${who}!`), timeout)
+        })
+    }
+    msgAfterTimeout("", "Foo", 100).then((msg) =>
+        msgAfterTimeout(msg, "Bar", 200)
+        ).then((msg) => {
+        console.log(`done after 300ms:${msg}`)
+    })
+ </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div>
+                            <div class="card card-body es5">
+                                <h6> ECMAScript-5</h6>
+                                <pre>
+   function msgAfterTimeout (msg, who, timeout, onDone) {
+        setTimeout(function () {
+         onDone(msg + " Hello " + who + "!");
+        }, timeout);
+    }
+    msgAfterTimeout("", "Foo", 100, function (msg) {
+    msgAfterTimeout(msg, "Bar", 200, function (msg) {
+        console.log("done after 300ms:" + msg);
+         });
+    });
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
